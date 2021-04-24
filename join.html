@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% block title %} Add User {% endblock %}
+
+{% block content %}
+
+<h2>Join user</h2>
+<br/>
+<form method='Post' action="{%url 'join' %}">
+{% csrf_token %}
+  <div class="mb-3">
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder= 'First name' name ='fname' value="{{ fname }}">
+  </div>
+
+  <div class="mb-3">
+    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder= 'Last name' name ='lname' value="{{ lname }}">
+  </div>
+
+  <div class="mb-3">
+    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder= 'Age' name ='age' value="{{ age }}">
+  </div>
+
+  <div class="mb-3">
+    <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder= 'Email adress' name ='email' value="{{ email }}">
+  </div>
+
+  <div class="mb-3">
+    <input type="password" class="form-control"  placeholder= 'Password' name ='passwd'>
+  </div>
+
+  <br/>
+  <button type="submit" class="btn btn-primary">Sing up</button>
+</form>
+
+{% endblock %}
